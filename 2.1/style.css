@@ -1,0 +1,82 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	border: 1px solid rgb(159, 128, 5);
+	text-align: center;
+}
+
+.items {
+	text-align: left;
+}
+
+.grid .item,
+.list .item {
+	display: inline-block;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+.grid .item {
+	width: calc(1200px / 3);
+	vertical-align: top;
+}
+.list .item {
+	width: 100%;
+}
+
+.grid .content,
+.list .content {
+	width: 200px;
+	max-width: 100%;
+	border: 1px solid #aaa;
+	padding: 1em;
+}
+.list .content {
+	width: calc(100% - 2em);
+}
+
+@media (min-width: 1025px) and (max-width: 1220px) {
+	.container { max-width: 1002px; }
+	.grid .item { width: calc(1002px / 3); }
+}
+@media (min-width: 1025px) {
+	.grid .item:nth-child(3n+1) .content {
+		float: left;
+	}
+	.grid .item:nth-child(3n+2) .content {
+		margin: 0 auto;
+	}
+	.grid .item:nth-child(3n+3) .content {
+		float: right;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.grid .item { width: 50%; }
+	.grid .item:nth-child(odd) .content {
+		float: left;
+	}
+	.grid .item:nth-child(even) .content {
+		float: right;
+	}
+}
+@media (max-width: 767px) {
+	.grid .item { width: 100%; }
+	.grid .item .content {
+		margin: 0 auto;
+	}
+}
+
+button {
+	padding: 1em;
+	margin: 0 auto;
+	background: none;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+button:hover {
+	background: #eee;
+}
